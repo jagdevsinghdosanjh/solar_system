@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    perspective: 1000px;
+    background: black;
+  }
+  
+  .solar-system {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    transform-style: preserve-3d;
+    animation: rotateSystem 60s infinite linear;
+  }
+  
+  .sun {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border-radius: 50%;
+    transform: translateZ(200px);
+  }
+  
+  .planet {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform-origin: center -200px;
+  }
+  
+  .mercury {
+    background: gray;
+    animation: orbit 30s infinite linear;
+  }
+  
+  .venus {
+    background: orange;
+    animation: orbit 50s infinite linear;
+    animation-delay: -10s;
+  }
+  
+  .earth {
+    background: blue;
+    animation: orbit 60s infinite linear;
+    animation-delay: -20s;
+  }
+  
+  .mars {
+    background: red;
+    animation: orbit 70s infinite linear;
+    animation-delay: -30s;
+  }
+  
+  @keyframes rotateSystem {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+  }
+  
+  @keyframes orbit {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+  }
+  
